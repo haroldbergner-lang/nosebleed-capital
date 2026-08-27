@@ -10,15 +10,26 @@
     --display:'Barlow Condensed',system-ui,sans-serif;--body:'IBM Plex Sans',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
   *{box-sizing:border-box}
   html,body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.55}
-  .wrap{max-width:860px;margin:0 auto;padding:28px 20px 80px}
+  .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 80px}
   h1{font-family:var(--display);font-weight:800;font-size:52px;line-height:.9;margin:0 0 22px;text-transform:uppercase}
   h1 small{display:block;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-bottom:8px}
 
-  /* tabs */
-  nav{display:flex;gap:6px;flex-wrap:wrap;border-bottom:2px solid var(--ink);margin-bottom:26px}
-  nav button{font:inherit;font-family:var(--display);font-weight:600;font-size:19px;text-transform:uppercase;letter-spacing:.02em;background:transparent;border:2px solid var(--ink);border-bottom:none;border-radius:4px 4px 0 0;padding:8px 16px 6px;cursor:pointer;color:var(--soft);margin-bottom:-2px}
-  nav button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+  /* layout */
+  .layout{display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:start}
+  @media(max-width:700px){.layout{grid-template-columns:1fr}}
+
+  /* trade list (sidebar) */
+  .side{position:sticky;top:20px;display:flex;flex-direction:column;gap:10px}
+  #filter{font:inherit;font-family:var(--mono);font-size:13px;padding:9px 11px;border:2px solid var(--ink);border-radius:4px;background:var(--paper);color:var(--ink);width:100%}
+  #filter::placeholder{color:var(--soft)}
+  nav{display:flex;flex-direction:column;gap:2px;max-height:calc(100vh - 140px);overflow-y:auto;border-top:1px solid var(--line);padding-top:8px}
+  nav button{font:inherit;font-family:var(--body);font-weight:600;font-size:14.5px;text-align:left;background:transparent;border:none;border-left:3px solid transparent;border-radius:2px;padding:8px 10px;cursor:pointer;color:var(--soft)}
+  nav button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-left-color:var(--alert)}
   nav button:focus-visible{outline:3px solid var(--alert);outline-offset:2px}
+  nav .empty{font-family:var(--mono);font-size:12px;color:var(--soft);padding:8px 10px}
+  .count{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+
+  .content{min-width:0}
   .tab{display:none}.tab.active{display:block}
 
   /* text */
@@ -30,75 +41,67 @@
   p{margin:0 0 12px}
   ul{margin:0 0 12px;padding-left:20px}li{margin:4px 0}
   .todo{color:#B23A2E}
-  @media(max-width:600px){h1{font-size:40px}nav button{font-size:16px;padding:6px 12px 4px}}
+  @media(max-width:600px){h1{font-size:40px}nav{max-height:220px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <h1><small>Ticket arbitrage · trade log</small>Nosebleed Capital</h1>
 
-<!-- One button per trade. Order = order of tabs. data-tab must match the section id below. -->
-<nav role="tablist">
-  <button role="tab" data-tab="usopen-2026">US Open 2026</button>
-  <button role="tab" data-tab="knicks-2026">Knicks Watch Party</button>
-</nav>
+<div class="layout">
+  <div class="side">
+    <input type="search" id="filter" placeholder="Filter trades…" autocomplete="off">
+    <span class="count" id="count"></span>
+    <!-- One button per trade, newest first. data-tab must match the section id below. -->
+    <nav role="tablist">
+      <button role="tab" data-tab="usopen-2026">US Open 2026</button>
+    </nav>
+  </div>
 
-<!-- ============================================================
-     TRADE: US Open 2026 – Session 8
-     To add a trade: copy from <section ...> to </section>, give it a
-     new id, add a matching <button> above.
-     ============================================================ -->
-<section class="tab" id="usopen-2026" role="tabpanel">
-  <div class="next"><b>Next action</b>Apr 15, 2027 — watch for the USTA on-sale announcement (2026's came Apr 23). Late May 2027 — Amex Platinum presale, buy day 1 in the first hour. Details in the playbook below.</div>
+  <div class="content">
+    <!-- ============================================================
+         TRADE: US Open 2026 – Session 8
+         To add a trade: copy from <section ...> to </section>, give it a
+         new id, add a matching <button> above (newest trades go first).
+         ============================================================ -->
+    <section class="tab" id="usopen-2026" role="tabpanel">
+      <div class="next"><b>Next action</b>Apr 15, 2027 — watch for the USTA on-sale announcement (2026's came Apr 23). Late May 2027 — Amex Platinum presale, buy day 1 in the first hour. Details in the playbook below.</div>
 
-  <h2>US Open 2026 – Session 8</h2>
-  <p class="status">Closed · sold Aug 26, 2026 · +$141.22 (+55.4% on capital) · ~85 days held</p>
+      <h2>US Open 2026 – Session 8</h2>
+      <p class="status">Closed · sold Aug 26, 2026 · +$141.22 (+55.4% on capital) · ~85 days held</p>
 
-  <h3>Position</h3>
-  <p>Two tickets to the Wednesday Sept 2 night session at Arthur Ashe (Men's &amp; Women's Singles 2nd Round, Session 8). Section 310, Row D, seats 15–16 — Promenade level, sideline. Bought at face, $127.39 each, through the Amex Platinum cardmember channel on roughly June 2. Sold on Ticketmaster Verified Resale on Aug 26, seven days before the event.</p>
+      <h3>Position</h3>
+      <p>Two tickets to the Wednesday Sept 2 night session at Arthur Ashe (Men's &amp; Women's Singles 2nd Round, Session 8). Section 310, Row D, seats 15–16 — Promenade level, sideline. Bought at face, $127.39 each, through the Amex Platinum cardmember channel on roughly June 2. Sold on Ticketmaster Verified Resale on Aug 26, seven days before the event.</p>
 
-  <h3>P&amp;L</h3>
-  <p>Listed at $220 per ticket. Ticketmaster took a 10% seller fee ($22), leaving $198 per ticket, $396 for the pair. Against $254.78 face for the pair, that's $141.22 profit, about 55% on capital. The buyer saw roughly $256 per ticket after Ticketmaster's ~16.5% markup. Payout releases only after the event, so the $396 lands after Sept 2.</p>
-  <p class="todo">Still missing: purchase-side fees from the June order. The true cost basis is a little higher and the return a little lower than stated.</p>
+      <h3>P&amp;L</h3>
+      <p>Listed at $220 per ticket. Ticketmaster took a 10% seller fee ($22), leaving $198 per ticket, $396 for the pair. Against $254.78 face for the pair, that's $141.22 profit, about 55% on capital. The buyer saw roughly $256 per ticket after Ticketmaster's ~16.5% markup. Payout releases only after the event, so the $396 lands after Sept 2.</p>
+      <p class="todo">Still missing: purchase-side fees from the June order. The true cost basis is a little higher and the return a little lower than stated.</p>
 
-  <h3>What happened</h3>
-  <p>The June estimate was 2.4–3x face based on Promenade comps at $275–350. It didn't hold. Session 8 was one of the softer nights on the schedule; a week out, Section 310 comps clustered in the low $220s buyer-facing with a Row E pair at about $273.</p>
-  <p>The key correction mid-trade was that Ticketmaster's seller price isn't the buyer's price. Buyer pays seller × ~1.165; seller keeps × 0.90. The first listing was anchored on buyer-facing comps as if they were seller prices and was implicitly overpriced. Repriced to $220 seller (~$256 to buyer), just under the Row E comp, and it cleared within a day. The order-of-play repricing plan (raise if Alcaraz/Sinner/Gauff/Sabalenka got the night slot, cut morning-of if unsold) never had to run.</p>
-  <p>Timing: the Amex presale ran May 26 9am ET to May 27 11:59pm ET, and public on-sale was May 28. The purchase on June 2 was after both. Face-value Row D seats still sitting there a week after public sale was itself the tell that this session had no real spread.</p>
+      <h3>What happened</h3>
+      <p>The June estimate was 2.4–3x face based on Promenade comps at $275–350. It didn't hold. Session 8 was one of the softer nights on the schedule; a week out, Section 310 comps clustered in the low $220s buyer-facing with a Row E pair at about $273.</p>
+      <p>The key correction mid-trade was that Ticketmaster's seller price isn't the buyer's price. Buyer pays seller × ~1.165; seller keeps × 0.90. The first listing was anchored on buyer-facing comps as if they were seller prices and was implicitly overpriced. Repriced to $220 seller (~$256 to buyer), just under the Row E comp, and it cleared within a day. The order-of-play repricing plan (raise if Alcaraz/Sinner/Gauff/Sabalenka got the night slot, cut morning-of if unsold) never had to run.</p>
+      <p>Timing: the Amex presale ran May 26 9am ET to May 27 11:59pm ET, and public on-sale was May 28. The purchase on June 2 was after both. Face-value Row D seats still sitting there a week after public sale was itself the tell that this session had no real spread.</p>
 
-  <h3>Playbook for 2027</h3>
-  <ul>
-    <li>USTA announced 2026 on-sale dates on Apr 23. Expect late April 2027; set an alert for Apr 15.</li>
-    <li>Amex presale opened Tue May 26 at 9am ET in 2026. Expect similar late-May window. Buy in the first hour of day 1.</li>
-    <li>Limits are 8 tickets per session, 16 per date, and 2 sessions per Card Member. Not 12.</li>
-    <li>Size 2–4 pairs across different sessions. Multiple pairs in one section compete with each other on the way out.</li>
-    <li>Target weekend day sessions or Round-of-16 / QF nights. Avoid weekday 2nd-round nights; matchup risk is what killed the spread.</li>
-    <li>Check for the Amex 50%-off promenade offer on select sessions. If it recurs it halves cost basis, which matters more than seat choice.</li>
-    <li>Seats: Promenade Row C–E sideline. Check aviewfrommyseat.com for railing/glass obstruction before picking seat numbers.</li>
-    <li>Exit: seller price = target buyer price ÷ 1.165. List 10–14 days out. Cut the price morning-of rather than hold to expiry.</li>
-  </ul>
-</section>
-
-<!-- ============================================================
-     TRADE: Knicks NBA Finals Watch Party (MSG)
-     ============================================================ -->
-<section class="tab" id="knicks-2026" role="tabpanel">
-  <h2>Knicks NBA Finals Watch Party</h2>
-  <p class="status">Closed · proof of concept</p>
-
-  <h3>Position</h3>
-  <p class="todo">Not yet written up. Add seats, face price, access channel, entry and exit dates.</p>
-
-  <h3>P&amp;L</h3>
-  <p class="todo">Add sale price, fees, net, and profit.</p>
-
-  <h3>What happened</h3>
-  <p class="todo">Add the story.</p>
-</section>
+      <h3>Playbook for 2027</h3>
+      <ul>
+        <li>USTA announced 2026 on-sale dates on Apr 23. Expect late April 2027; set an alert for Apr 15.</li>
+        <li>Amex presale opened Tue May 26 at 9am ET in 2026. Expect similar late-May window. Buy in the first hour of day 1.</li>
+        <li>Limits are 8 tickets per session, 16 per date, and 2 sessions per Card Member. Not 12.</li>
+        <li>Size 2–4 pairs across different sessions. Multiple pairs in one section compete with each other on the way out.</li>
+        <li>Target weekend day sessions or Round-of-16 / QF nights. Avoid weekday 2nd-round nights; matchup risk is what killed the spread.</li>
+        <li>Check for the Amex 50%-off promenade offer on select sessions. If it recurs it halves cost basis, which matters more than seat choice.</li>
+        <li>Seats: Promenade Row C–E sideline. Check aviewfrommyseat.com for railing/glass obstruction before picking seat numbers.</li>
+        <li>Exit: seller price = target buyer price ÷ 1.165. List 10–14 days out. Cut the price morning-of rather than hold to expiry.</li>
+      </ul>
+    </section>
+  </div>
+</div>
 
 </div>
 <script>
   const tabs=[...document.querySelectorAll('nav [role=tab]')], panels=[...document.querySelectorAll('.tab')];
+  const filterInput=document.getElementById('filter'), countEl=document.getElementById('count');
+
   function show(id){
     tabs.forEach(t=>t.setAttribute('aria-selected',t.dataset.tab===id));
     panels.forEach(p=>p.classList.toggle('active',p.id===id));
@@ -106,6 +109,19 @@
   }
   tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.tab)));
   show(panels.some(p=>p.id===location.hash.slice(1))?location.hash.slice(1):tabs[0].dataset.tab);
+
+  function applyFilter(){
+    const q=filterInput.value.trim().toLowerCase();
+    let visible=0;
+    tabs.forEach(t=>{
+      const match=t.textContent.toLowerCase().includes(q);
+      t.style.display=match?'':'none';
+      if(match)visible++;
+    });
+    countEl.textContent=visible+' of '+tabs.length+' trades';
+  }
+  filterInput.addEventListener('input',applyFilter);
+  applyFilter();
 </script>
 </body>
 </html>
