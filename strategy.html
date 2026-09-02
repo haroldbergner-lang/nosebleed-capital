@@ -20,7 +20,8 @@
   .mine b{color:var(--alert);font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;display:block;margin-bottom:6px}
   .mine p{margin:0 0 8px}
   .mine p:last-child{margin-bottom:0}
-  h2{font-family:var(--display);font-weight:800;font-size:24px;line-height:1;margin:0 0 10px;text-transform:uppercase}
+  h2{font-family:var(--display);font-weight:800;font-size:24px;line-height:1;margin:0 0 10px;text-transform:uppercase;border-top:1px solid var(--line);padding-top:22px}
+  h2:first-of-type{border-top:none;padding-top:0}
   h3{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);margin:20px 0 8px}
   p{margin:0 0 12px}
   ul{margin:0 0 14px;padding-left:20px}
@@ -37,13 +38,16 @@
 <h2>The core trade</h2>
 <p><b>Buy in the primary market at face value. Sell in the secondary market once scarcity is priced in.</b> The edge isn't taste or luck — it's access. Most tickets never touch resale at a premium because most buyers pay whatever the primary market charges, at whatever time slot they can get. The trade only works when there's a legitimate way to buy before, or instead of, the general public — and a legitimate way to resell after.</p>
 
-<h3>Primary-side access channels</h3>
+<h2>Primary vs. secondary — and it's not all Ticketmaster</h2>
+<p>"Primary" means whoever sold the ticket on behalf of the venue/promoter at face value; "secondary" means an individual reselling a ticket they already hold. Ticketmaster (Live Nation) handles most major US concert/arena primary ticketing, but it's not universal — the primary platform is set by the venue's own contract, not by the artist or tour, so a single tour can run on different rails city to city. Rush's tour is mostly Ticketmaster, but Houston's Toyota Center presale ran through <b>AXS</b> (AEG's competing platform) instead. Other primary providers to expect at smaller or non-arena venues: SeatGeek Enterprise, Etix, See Tickets, DICE, Paciolan, Eventbrite. Each platform runs its own separate official resale marketplace (Ticketmaster Verified Resale, AXS Official Resale) and its own separate fraud/anti-scalping detection — a purchase pattern on one platform doesn't carry over to another, since they're independent systems with independent purchase histories.</p>
+<p>On an event page, tell primary from resale by: a "Resale"/"Verified Resale" tag on the listing, and price shape — primary tickets follow a small number of fixed tiers set by the venue, while resale prices vary individually by seller. A banner stating "primary tickets are extremely limited or have sold out" is the platform telling you directly that everything showing is now resale.</p>
+
+<h2>Getting in — primary-side access channels</h2>
+<h3>Amex</h3>
 <ul>
   <li><b>Amex Presale Tickets®.</b> Early access <em>before general on-sale</em> — this is the actual mechanism behind the US Open trade: buying before the public even can, ahead of demand getting priced in. Platinum, not Centurion, is what unlocks this. Centurion adds concierge-sourced access to separate, already-scarce VIP inventory at a $10k init + $5k/yr cost; it's not a better version of the same presale and isn't worth carrying for this strategy's margins.</li>
   <li><b>Amex Reserved Tickets®</b> — a distinct, weaker tier. This is a dedicated allotment reserved for Card Members, not necessarily an early window ahead of the public. It's an exclusive channel, not inherently a mispricing window, and it's what most Amex-branded corporate hospitality (e.g. F1 Paddock Club) actually is. Don't assume the presale thesis applies just because the badge says "Amex" — check whether it's actually a pre-general-on-sale window or just a walled-off allotment.</li>
   <li><b>Premium Events Collection™</b> — curated, bespoke experiences (dining, entertainment, fashion, sports) for Platinum and Centurion members. Not resellable tickets. Out of scope for this strategy entirely.</li>
-  <li><b>Official lotteries / ballots.</b> Masters badges, Wimbledon's public ballot, and some Ryder Cup allocations are lottery-based rather than first-come presales. These get face-value access without needing any card affiliation — but check the resale terms before assuming a ballot win is tradeable (e.g. Masters badges cannot legally be resold).</li>
-  <li><b>Cardmember/loyalty on-sale windows</b> from the venue, league, or ticketing platform directly (e.g. season-ticket-holder presales, team credit union or bank partnerships) — same shape as Amex, different gatekeeper.</li>
 </ul>
 
 <h3>Other bank/network presale programs — Amex isn't the only one</h3>
@@ -55,18 +59,20 @@
   <li><b>Visa Signature/Infinite entertainment offers.</b> Mostly a 2-for-1 ticket discount and concierge-arranged tickets, not a timing-based presale. Different mechanism — a cost-reduction lever, not a "beat the public to it" edge — but useful for lowering cost basis when access is already secured some other way.</li>
 </ul>
 
+<h3>Non-card channels</h3>
+<ul>
+  <li><b>Official lotteries / ballots.</b> Masters badges, Wimbledon's public ballot, and some Ryder Cup allocations are lottery-based rather than first-come presales. These get face-value access without needing any card affiliation — but check the resale terms before assuming a ballot win is tradeable (e.g. Masters badges cannot legally be resold).</li>
+  <li><b>Cardmember/loyalty on-sale windows</b> from the venue, league, or ticketing platform directly (e.g. season-ticket-holder presales, team credit union or bank partnerships) — same shape as the bank presales above, different gatekeeper.</li>
+</ul>
+
 <div class="mine">
   <b>Cards on hand</b>
   <p><b style="color:inherit">Citi Double Cash</b> — no annual fee, but it's been issued as a <b style="color:inherit">World Elite Mastercard</b> since 2020, which stacks two independent channels: Citi Entertainment (issuer-level) and Mastercard Priceless, including the upgraded Preferred Tickets tier that base Mastercards don't get. This is the primary sourcing card — check Citi Entertainment and priceless.com/music before assuming a new candidate needs Amex.</p>
   <p><b style="color:inherit">Chase Sapphire Preferred</b> — Visa Signature (not Infinite), so no network-level presale timing edge. Useful for Chase Preferred Seats if something lands at an MSG-owned venue, and for the Visa Signature 2-for-1 offer as a cost-reduction stack, not as a primary sourcing channel.</p>
 </div>
 
-<h3>Secondary-side exit</h3>
+<h2>Getting out — secondary-side exit</h2>
 <p>Sell through an official or verified resale channel (e.g. Ticketmaster Verified Resale) rather than an informal one, and price off <em>sold</em> comps, not asking prices. Two numbers matter and they are not the same thing: the seller's take-home price and the buyer's paid price differ by the platform's fee stack (e.g. Ticketmaster: buyer pays seller price × ~1.165, seller keeps seller price × 0.90). Set the listing price by working backward from a buyer-facing comp, not by copying it.</p>
-
-<h3>Primary isn't always Ticketmaster</h3>
-<p>"Primary" means whoever sold the ticket on behalf of the venue/promoter at face value; "secondary" means an individual reselling a ticket they already hold. Ticketmaster (Live Nation) handles most major US concert/arena primary ticketing, but it's not universal — the primary platform is set by the venue's own contract, not by the artist or tour, so a single tour can run on different rails city to city. Rush's tour is mostly Ticketmaster, but Houston's Toyota Center presale ran through <b>AXS</b> (AEG's competing platform) instead. Other primary providers to expect at smaller or non-arena venues: SeatGeek Enterprise, Etix, See Tickets, DICE, Paciolan, Eventbrite. Each platform runs its own separate official resale marketplace (Ticketmaster Verified Resale, AXS Official Resale) and its own separate fraud/anti-scalping detection — a purchase pattern on one platform doesn't carry over to another, since they're independent systems with independent purchase histories.</p>
-<p>On an event page, tell primary from resale by: a "Resale"/"Verified Resale" tag on the listing, and price shape — primary tickets follow a small number of fixed tiers set by the venue, while resale prices vary individually by seller. A banner stating "primary tickets are extremely limited or have sold out" is the platform telling you directly that everything showing is now resale.</p>
 
 </div>
 </body>
