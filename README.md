@@ -4,7 +4,8 @@ Ticket arbitrage trade log. Single-file HTML site, one entry per trade, publishe
 
 ## Structure
 
-`index.html` is self-contained: markup, CSS, and the tiny tab-switching/filtering script all live in that one file.
+- `index.html` is self-contained: markup, CSS, and the tiny tab-switching/filtering script all live in that one file.
+- `strategy.html` is a standalone page laying out the general strategy (buy at face in the primary market via presales/lotteries, sell in the secondary market) and the screening/exclusion checklist for new events. Linked from `index.html`.
 
 - Each trade is a `<section class="tab" id="...">` block in the `.content` column.
 - Each trade has a matching `<button role="tab" data-tab="...">` in the sidebar `<nav>`, in the same order as the sections — newest trade first.
