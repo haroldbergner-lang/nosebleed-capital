@@ -15,10 +15,17 @@
   .back{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;margin-bottom:18px}
   h1{font-family:var(--display);font-weight:800;font-size:44px;line-height:.95;margin:0 0 4px;text-transform:uppercase}
   h1 small{display:block;font-family:var(--mono);font-size:12px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--soft);margin-bottom:8px}
-  .lede{color:var(--soft);margin:0 0 28px;font-size:16.5px}
-  h2{font-family:var(--display);font-weight:800;font-size:24px;line-height:1;margin:0 0 10px;text-transform:uppercase;border-top:1px solid var(--line);padding-top:22px}
+  .lede{color:var(--soft);margin:0 0 24px;font-size:16.5px}
+  .toc{font-family:var(--mono);font-size:12px;letter-spacing:.03em;color:var(--soft);margin:0 0 28px;padding:14px 16px;border:1px solid var(--line);border-radius:4px}
+  .toc b{display:block;color:var(--ink);letter-spacing:.15em;text-transform:uppercase;font-size:11px;margin-bottom:8px}
+  .toc ol{margin:0;padding-left:18px}
+  .toc li{margin:3px 0}
+  .toc a{text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  h2{font-family:var(--display);font-weight:800;font-size:26px;line-height:1;margin:0 0 4px;text-transform:uppercase;border-top:2px solid var(--ink);padding-top:22px}
   h2:first-of-type{border-top:none;padding-top:0}
-  h3{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);margin:20px 0 8px}
+  .cat-tag{display:block;font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--soft);margin-bottom:6px}
+  h3{font-family:var(--mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink);margin:22px 0 8px;padding-bottom:4px;border-bottom:1px solid var(--line)}
   p{margin:0 0 12px}
   ul{margin:0 0 14px;padding-left:20px}
   li{margin:5px 0}
@@ -29,34 +36,38 @@
 <div class="wrap">
 <a class="back" href="index.html">&larr; Trade log</a>
 <h1><small>Nosebleed Capital</small>Strategy</h1>
-<p class="lede">The whole trade: get in at face value through a channel most buyers can't use, get out on the open resale market once real demand is priced in.</p>
+<p class="lede">The whole trade: get in at face value through a channel most buyers can't use, get out on the open resale market once real demand is priced in. The mechanics differ by category — this page splits into the two that have shown up in the trade log so far.</p>
 
-<h2>The core trade</h2>
+<nav class="toc">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#core-trade">The core trade</a></li>
+    <li><a href="#vocab">Vocabulary: primary vs. secondary</a></li>
+    <li><a href="#sports">Major sports &amp; arena events</a></li>
+    <li><a href="#nightlife">DJ shows &amp; nightlife</a></li>
+  </ol>
+</nav>
+
+<h2 id="core-trade">The core trade</h2>
 <p><b>Buy in the primary market at face value. Sell in the secondary market once scarcity is priced in.</b> The edge isn't taste or luck — it's access. Most tickets never touch resale at a premium because most buyers pay whatever the primary market charges, at whatever time slot they can get. The trade only works when there's a legitimate way to buy before, or instead of, the general public — and a legitimate way to resell after.</p>
 
-<h2>Primary vs. secondary — and it's not all Ticketmaster</h2>
+<h2 id="vocab">Vocabulary: primary vs. secondary</h2>
 <p>"Primary" means whoever sold the ticket on behalf of the venue/promoter at face value; "secondary" means an individual reselling a ticket they already hold. Ticketmaster (Live Nation) handles most major US concert/arena primary ticketing, but it's not universal — the primary platform is set by the venue's own contract, not by the artist or tour, so a single tour can run on different rails city to city. Rush's tour is mostly Ticketmaster, but Houston's Toyota Center presale ran through <b>AXS</b> (AEG's competing platform) instead. Other primary providers to expect at smaller or non-arena venues: SeatGeek Enterprise, Etix, See Tickets, DICE, Paciolan, Eventbrite. Each platform runs its own separate official resale marketplace (Ticketmaster Verified Resale, AXS Official Resale) and its own separate fraud/anti-scalping detection — a purchase pattern on one platform doesn't carry over to another, since they're independent systems with independent purchase histories.</p>
 <p>On an event page, tell primary from resale by: a "Resale"/"Verified Resale" tag on the listing, and price shape — primary tickets follow a small number of fixed tiers set by the venue, while resale prices vary individually by seller. A banner stating "primary tickets are extremely limited or have sold out" is the platform telling you directly that everything showing is now resale.</p>
 
-<h2>Getting in — primary-side access channels</h2>
-<h3>Amex</h3>
-<ul>
-  <li><b>Amex Presale Tickets®.</b> Early access <em>before general on-sale</em> — this is the actual mechanism behind the US Open trade: buying before the public even can, ahead of demand getting priced in. Platinum, not Centurion, is what unlocks this. Centurion adds concierge-sourced access to separate, already-scarce VIP inventory at a $10k init + $5k/yr cost; it's not a better version of the same presale and isn't worth carrying for this strategy's margins.</li>
-  <li><b>Amex Reserved Tickets®</b> — a distinct, weaker tier. This is a dedicated allotment reserved for Card Members, not necessarily an early window ahead of the public. It's an exclusive channel, not inherently a mispricing window, and it's what most Amex-branded corporate hospitality (e.g. F1 Paddock Club) actually is. Don't assume the presale thesis applies just because the badge says "Amex" — check whether it's actually a pre-general-on-sale window or just a walled-off allotment.</li>
-  <li><b>Premium Events Collection™</b> — curated, bespoke experiences (dining, entertainment, fashion, sports) for Platinum and Centurion members. Not resellable tickets. Out of scope for this strategy entirely.</li>
-</ul>
+<h2 id="sports"><span class="cat-tag">Category</span>Major sports &amp; arena events</h2>
+<p>The model behind the US Open trade: a national bank/network presale program gets you in before the public, an official verified-resale marketplace gets you out.</p>
 
-<h3>Other bank/network presale programs — Amex isn't the only one</h3>
+<h3>Getting in</h3>
 <ul>
+  <li><b>Amex Presale Tickets®.</b> Early access <em>before general on-sale</em> — the actual mechanism behind the US Open trade: buying before the public even can, ahead of demand getting priced in. Platinum, not Centurion, is what unlocks this. Centurion adds concierge-sourced access to separate, already-scarce VIP inventory at a $10k init + $5k/yr cost; it's not a better version of the same presale and isn't worth carrying for this strategy's margins.</li>
+  <li><b>Amex Reserved Tickets®</b> — a distinct, weaker tier. This is a dedicated allotment reserved for Card Members, not necessarily an early window ahead of the public. It's an exclusive channel, not inherently a mispricing window, and it's what most Amex-branded corporate hospitality (e.g. F1 Paddock Club) actually is. Don't assume the presale thesis applies just because the badge says "Amex" — check whether it's actually a pre-general-on-sale window or just a walled-off allotment.</li>
+  <li><b>Amex Premium Events Collection™</b> — curated, bespoke experiences (dining, entertainment, fashion, sports) for Platinum and Centurion members. Not resellable tickets. Out of scope for this strategy entirely.</li>
   <li><b>Citi Entertainment / Citi presale.</b> Any Citi-issued Visa or Mastercard credit card, plus Citibank Mastercard debit cards. Access via the first 6 digits of the card number at Ticketmaster/Live Nation checkout, or by linking accounts ahead of time. The deepest channel for Live Nation/Ticketmaster concerts specifically — broader concert coverage than Amex.</li>
   <li><b>Mastercard Priceless® presale.</b> Network-level, not issuer-specific — any consumer Mastercard credit card qualifies, regardless of which bank issued it. Presale window runs up to ~48 hours before general on-sale. World Elite/World Legend tier cards get an upgraded "Preferred Tickets" allocation on top of the base presale.</li>
   <li><b>Chase Cardholder Presales / Chase Preferred Seats.</b> Any Chase-issued card, but the coverage is narrow — concentrated at Madison Square Garden–owned venues (MSG, Radio City, Beacon Theatre). Worth it specifically for those rooms, not a general-purpose sourcing channel.</li>
   <li><b>Capital One Entertainment.</b> Eligible Capital One rewards cards get presale access via an iHeartRadio partnership and the Capital One Entertainment portal, plus expedited entry at Capital One Arena. Smaller program, also stacks a cashback rate on the ticket purchase itself.</li>
   <li><b>Visa Signature/Infinite entertainment offers.</b> Mostly a 2-for-1 ticket discount and concierge-arranged tickets, not a timing-based presale. Different mechanism — a cost-reduction lever, not a "beat the public to it" edge — but useful for lowering cost basis when access is already secured some other way.</li>
-</ul>
-
-<h3>Non-card channels</h3>
-<ul>
   <li><b>Official lotteries / ballots.</b> Masters badges, Wimbledon's public ballot, and some Ryder Cup allocations are lottery-based rather than first-come presales. These get face-value access without needing any card affiliation — but check the resale terms before assuming a ballot win is tradeable (e.g. Masters badges cannot legally be resold).</li>
   <li><b>Cardmember/loyalty on-sale windows</b> from the venue, league, or ticketing platform directly (e.g. season-ticket-holder presales, team credit union or bank partnerships) — same shape as the bank presales above, different gatekeeper.</li>
 </ul>
@@ -66,13 +77,13 @@
 <p><b>Chase Sapphire Preferred</b> — Visa Signature (not Infinite), so no network-level presale timing edge. Useful for Chase Preferred Seats if something lands at an MSG-owned venue, and for the Visa Signature 2-for-1 offer as a cost-reduction stack, not as a primary sourcing channel.</p>
 <p><b>Amex Centurion</b> — already sunk cost, so this isn't an acquisition question. Doesn't sharpen the core Amex Presale Tickets window (that's Platinum-level access, not Centurion-gated). What it adds on top: concierge-sourced access to sold-out shows and Amex's Premium Events Collection™. Treat both as a back-pocket option, not a primary sourcing channel — they tend to be bundled-experience or corporate-hospitality-style product (the same category as F1 Paddock Club), often with the same identity-lock/transfer friction that makes resale harder than a plain transferable ticket.</p>
 
-<h2>Getting out — secondary-side exit</h2>
+<h3>Getting out</h3>
 <p>Sell through an official or verified resale channel (e.g. Ticketmaster Verified Resale) rather than an informal one, and price off <em>sold</em> comps, not asking prices. Two numbers matter and they are not the same thing: the seller's take-home price and the buyer's paid price differ by the platform's fee stack (e.g. Ticketmaster: buyer pays seller price × ~1.165, seller keeps seller price × 0.90). Set the listing price by working backward from a buyer-facing comp, not by copying it.</p>
 
-<h2>DJ shows and nightlife — same trade, different plumbing</h2>
+<h2 id="nightlife"><span class="cat-tag">Category</span>DJ shows &amp; nightlife</h2>
 <p>Club and festival tickets still have a "be first" edge — it's just not the bank-card presale model above. There's no Amex/Citi/Mastercard-style program that spans nightlife venues the way it spans arenas; access is fragmented per platform and promoter, and the edge is being fast on a limited release rather than holding the right card.</p>
 
-<h3>Getting in — drops and codes, not card affiliation</h3>
+<h3>Getting in</h3>
 <ul>
   <li><b>Phased/tiered pricing ("Phase 1," "Early Bird").</b> Most club and festival tickets sell in a fixed number of price tiers, each a limited allotment — Phase 1 sells out (or hits its cutoff), price steps up to Phase 2, and so on. This is a real drop: the cheapest, and often first, inventory is gone once that tier sells out, so being ready the moment a phase opens is the edge, not a card affiliation.</li>
   <li><b>Artist/promoter fan-list and social presale codes.</b> Signing up for an artist's mailing list or a promoter's Instagram/text alerts gets a code ahead of the public on-sale — same shape as a bank presale, but gated by the artist/promoter relationship instead of a card issuer.</li>
@@ -81,7 +92,7 @@
 </ul>
 <p>The primary platforms are also fragmented by venue, not centralized: <b>FourVenues</b> (the "nightlife operating system" behind Pacha and other clubs — what the Experts Only Pacha ticket ran on), <b>Resident Advisor (RA)</b> (dominant for underground house/techno, charges promoters roughly 10% per ticket), <b>DICE</b> (mobile-app-locked tickets), and <b>Tixr</b> (used by larger festivals like Zamna and Lightning in a Bottle, and some nightclubs). Knowing which platform a given venue or promoter runs on — and its phase structure — replaces "which bank card" as the research step here.</p>
 
-<h3>Getting out — several of these platforms actively fight resale</h3>
+<h3>Getting out</h3>
 <p>This is where nightlife diverges hardest from sports. Ticketmaster/AXS tolerate and operate official verified-resale marketplaces; several dominant nightlife platforms are built specifically to suppress scalping instead. <b>DICE</b> locks tickets inside its app and only activates the QR code on the day of the show — its resale facility, when enabled at all, is a face-value waiting list, not a market where a premium can be captured. <b>RA</b> and <b>FourVenues</b> generally have no built-in official resale — exits happen through informal third-party marketplace apps, with thinner comps and none of the buyer trust a brand-name verified-resale channel carries (this is what the Experts Only Pacha trade actually sold through).</p>
 <p>Net effect: the buy-face/sell-premium trade is real here, but harder to realize on the exit side than in sports, and it depends on which platform a given venue uses — check that before assuming a resale exit exists at all, not after buying.</p>
 
